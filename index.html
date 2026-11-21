@@ -1,75 +1,121 @@
-Олеся💗⚡, [26 вер. 2026, 15:00]
+
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Містичний Веб-Квест</title>
-    <!-- Tailwind CSS for modern, responsive styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter & Cinzel -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            user-select: none;
-        }
-        .cinzel-font {
-            font-family: 'Cinzel', serif;
-        }
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 15px rgba(236, 72, 153, 0.4); }
-            50% { box-shadow: 0 0 30px rgba(236, 72, 153, 0.8); }
-        }
-        .glow-pink {
-            animation: pulse-glow 3s infinite;
-        }
-        @keyframes float-item {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-        .float-anim {
-            animation: float-item 4s ease-in-out infinite;
-        }
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.1);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.4);
-            border-radius: 4px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FirstStep — вакансії</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between overflow-x-hidden">
+<body>
 
-    <div id="app" class="flex-grow flex flex-col items-center justify-center p-4 relative">
-        
-        <!-- Background Room Scene Overlay - Crystal clear and fully visible -->
-        <div id="ambient-overlay" class="absolute inset-0 pointer-events-none transition-all duration-1000 z-0 bg-cover bg-center opacity-95"></div>
-        <div id="ambient-gradient" class="absolute inset-0 pointer-events-none transition-colors duration-1000 z-0 bg-slate-950/20"></div>
+  <h1>FirstStep</h1>
+  <p>Знайди свою першу роботу!</p>
 
-        <!-- 1. AUTHORIZATION SCREEN -->
-        <div id="auth-screen" class="relative z-10 w-full max-w-md bg-slate-900/90 backdrop-blur-md p-8 rounded-2xl border border-slate-700 shadow-2xl text-center">
-            <div class="mb-6">
-                <span class="text-4xl">🔮</span>
-                <h1 class="text-3xl font-extrabold cinzel-font mt-2 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Магічний Квест</h1>
-                <p class="text-sm text-slate-300 mt-2">Пройди три кімнати, розгадай таємниці за допомогою підказок та виберися на свободу!</p>
-            </div>
-            
-            <form id="auth-form" onsubmit="handleAuth(event)" class="space-y-4 text-left">
-                <div>
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Прізвище та Ім'я (українською)</label>
-                    <input type="text" id="fullname-input" placeholder="Наприклад: Шевченко Тарас" 
-                           class="w-full px-4 py-3 bg-slate-800/90 border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 text-slate-100 placeholder-slate-400 transition-all">
-                    <p id="auth-error" class="text-rose-400 text-xs mt-1.5 hidden">Будь ласка, введіть справжнє прізвище та ім'я українськими літерами (без цифр і латиниці).</p>
-                </div>
-                <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold rounded-xl shadow-lg transition-all transform active:scale-95">
-                    Розпочати пригоду
-                </button>
-            </form>
-        </div>
+  <div class="jobs">
 
+    <div class="job-wrapper">
+      <article class="job-card">
+        <h2>Помічник фотографа</h2>
+        <p class="badge">Гнучкий графік</p>
+        <p><strong>Харків</strong> · 150 грн за годину</p>
+        <p>Допомагай готуватися до фотосесій та обирати найкращі світлини.</p>
+        <button class="hideButton" type="button">Приховати вакансію</button>
+      </article>
+      <button class="showButton" type="button" hidden>Показати вакансію</button>
+    </div>
+
+    <div class="job-wrapper">
+      <article class="job-card">
+        <h2>Помічник у кав'ярні</h2>
+        <p class="badge">Дружня команда</p>
+        <p><strong>Харків</strong> · 120 грн за годину</p>
+        <p>Допомагай підтримувати чистоту, подавати десерти та зустрічати гостей.</p>
+        <button class="hideButton" type="button">Приховати вакансію</button>
+      </article>
+      <button class="showButton" type="button" hidden>Показати вакансію</button>
+    </div>
+
+    <div class="job-wrapper">
+      <article class="job-card">
+        <h2>Репетитор для молодших школярів</h2>
+        <p class="badge">Часткова зайнятість</p>
+        <p><strong>Онлайн</strong> · 200 грн за заняття</p>
+        <p>Пояснюй прості теми з математики та допомагай виконувати домашні завдання.</p>
+        <button class="hideButton" type="button">Приховати вакансію</button>
+      </article>
+      <button class="showButton" type="button" hidden>Показати вакансію</button>
+    </div>
+
+    <div class="job-wrapper">
+      <article class="job-card">
+        <h2>Дизайнер-початківець</h2>
+        <p class="badge">Творча робота</p>
+        <p><strong>Дистанційно</strong> · 300 грн за проєкт</p>
+        <p>Створюй яскраві афіші, банери та дописи для соціальних мереж.</p>
+        <button class="hideButton" type="button">Приховати вакансію</button>
+      </article>
+      <button class="showButton" type="button" hidden>Показати вакансію</button>
+    </div>
+
+    <div class="job-wrapper">
+      <article class="job-card">
+        <h2>Помічник бібліотекаря</h2>
+        <p class="badge">Спокійна атмосфера</p>
+        <p><strong>Харків</strong> · 100 грн за годину</p>
+        <p>Розкладай книги, допомагай читачам та підтримуй порядок на полицях.</p>
+        <button class="hideButton" type="button">Приховати вакансію</button>
+      </article>
+      <button class="showButton" type="button" hidden>Показати вакансію</button>
+    </div>
+
+    <div class="job-wrapper">
+      <article class="job-card">
+        <h2>Адміністратор соціальних мереж</h2>
+        <p class="badge">Робота онлайн</p>
+        <p><strong>Дистанційно</strong> · 250 грн за день</p>
+        <p>Публікуй дописи, відповідай на коментарі та придумуй цікаві ідеї для сторінки.</p>
+        <button class="hideButton" type="button">Приховати вакансію</button>
+      </article>
+      <button class="showButton" type="button" hidden>Показати вакансію</button>
+    </div>
+
+    <div class="job-wrapper">
+      <article class="job-card">
+        <h2>Помічник флориста</h2>
+        <p class="badge">Робота з квітами</p>
+        <p><strong>Харків</strong> · 130 грн за годину</p>
+        <p>Готуй квіти до продажу, оформлюй букети та створюй красиві композиції.</p>
+        <button class="hideButton" type="button">Приховати вакансію</button>
+      </article>
+      <button class="showButton" type="button" hidden>Показати вакансію</button>
+    </div>
+
+    <div class="job-wrapper">
+      <article class="job-card">
+        <h2>Помічник ветеринара</h2>
+        <p class="badge">Допомога тваринам</p>
+        <p><strong>Харків</strong> · 160 грн за годину</p>
+        <p>Допомагай доглядати за тваринами та підтримуй порядок у кабінеті.</p>
+        <button class="hideButton" type="button">Приховати вакансію</button>
+      </article>
+      <button class="showButton" type="button" hidden>Показати вакансію</button>
+    </div>
+
+    <div class="job-wrapper">
+      <article class="job-card">
+        <h2>Контент-помічник</h2>
+        <p class="badge">Перший досвід</p>
+        <p><strong>Дистанційно</strong> · 200 грн за завдання</p>
+        <p>Підбирай цікаві теми, редагуй короткі тексти та допомагай створювати контент.</p>
+        <button class="hideButton" type="button">Приховати вакансію</button>
+      </article>
+      <button class="showButton" type="button" hidden>Показати вакансію</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
